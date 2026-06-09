@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Submissão</title>
+
+    <link rel="stylesheet" href="css/main_styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Confirmação de Submissão</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="pagina2.html">Cursos (Tabelas)</a></li>
+                    <li><a href="pagina3.html">Inscrição (Formulário)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="confirmation-container">
+
+            <h2>Dados Recebidos (via Método GET)</h2>
+
+            <p>
+                O servidor fictício interceptou os seguintes parâmetros enviados no URL da requisição:
+            </p>
+
+            <div class="date-box">
+
+                <p>
+                    <strong>Nome do Formando:</strong>
+                    <span id="name"></span>
+                </p>
+
+                <p>
+                    <strong>E-mail:</strong>
+                    <span id="email"></span>
+                </p>
+
+                <p>
+                    <strong>Idade:</strong>
+                    <span id="age"></span> anos
+                </p>
+
+                <p>
+                    <strong>Unidade Selecionada:</strong>
+                    <span id="module"></span>
+                </p>
+
+            </div>
+
+            <a href="pagina3.html" class="voltar">
+                ← Voltar e submeter novo formulário
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - UC 0604</p>
+    </footer>
+
+    <script>
+        const dataSent = new URLSearchParams(window.location.search);
+
+        document.getElementById("name").textContent =
+            dataSent.get("nome") || "Não informado";
+
+        document.getElementById("email").textContent =
+            dataSent.get("email") || "Não informado";
+
+        document.getElementById("age").textContent =
+            dataSent.get("idade") || "Não informado";
+
+        document.getElementById("module").textContent =
+            dataSent.get("modulo") || "Não informado";
+    </script>
+
+</body>
+</html>

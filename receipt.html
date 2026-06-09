@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main_styles.css">
+    <title>UC-00604 Dados do Formulario</title>
+</head>
+<body>
+     <h1>UC-00604 Dados recebidos com Sucesso </h1>
+    <p>Dados enviados por GET</p>
+
+    <table >
+        <tr>
+        <th colspan="2" class="header">Os dados sao</th>
+        </tr>
+        <tr>
+            <td>Nome:</td>
+            <td ><span id="nameValue"> A Caregar...</span> </td>
+        </tr>
+        <tr>
+            <td>Idade:</td>
+            <td> <span id="ageValue"> A Caregar...</span> </td>
+        </tr>
+        <tr>
+            <td>Contacto:</td>
+            <td><span id="phoneValue"> A Caregar...</span></td>
+        </tr>
+         <tr>
+            <td>Email:</td>
+            <td><span id="emailValue"> A Caregar...</span></td>
+        </tr>
+        <tr>
+            <td>Mensagem:</td>
+            <td><span id="messageValue"> A Caregar...</span></td>
+        </tr>
+
+    </table>
+
+        <button class="btn-voltar" onclick="window.location.href='index.html'"> Voltar ao Formulário </button>
+
+        
+
+        
+        <script>
+            // Get the query parameters from the URL
+            const dataSent = new URLSearchParams(window.location.search);
+
+            // Set the values in the table
+            document.getElementById('nameValue').textContent = dataSent.get('name');
+            document.getElementById('ageValue').textContent = dataSent.get('age');
+            document.getElementById('phoneValue').textContent = dataSent.get('phone');
+            document.getElementById('emailValue').textContent = dataSent.get('email');
+            document.getElementById('messageValue').textContent = dataSent.get('message');
+        </script>
+
+</body>
+</html>
